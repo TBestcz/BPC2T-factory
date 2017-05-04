@@ -38,15 +38,20 @@ public class Master {
 					}
 						
 					break;
-				/*case 2:
-					System.out.println("Zadejte jmeno a prumer studenta");
-					jmeno=sc.next();
-					prumer = pouzeCisla(sc);
-					if (!mojeDatabaze.setPrumer(jmeno,prumer))
-						System.out.println("Prumer nezadan");
+				case 2:
+					System.out.println("Zadejte typ prace [1|2] a pocet soucastek [Integer]");
+					int typee 	= onlyInteger(sc);
+					int count 	= onlyInteger(sc);
+					
+					if(db.addTask(typee, count)) {
+						System.out.println("Task has been added successfully");
+					} else {
+						System.out.println("Task cannot be created.");
+					}
+					
 					
 					break;
-				case 3:
+				/*case 3:
 					System.out.println("Zadejte jmeno studenta");
 					jmeno=sc.next();
 					Student info = null;
